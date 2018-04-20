@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ListViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    ListViewController *list = [[ListViewController alloc ] initWithNibName:@"ListViewController" bundle:nil];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:list];
+    
+    self.window.rootViewController = list;
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
